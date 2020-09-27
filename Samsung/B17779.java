@@ -8,8 +8,8 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class B17779 {// 게리맨더링 2
-	// 12:54   2:19  1시간 25분컷
-	// 모든 알고리즘은 한번에 안풀린다 
+	// 12:54 2:19 1시간 25분컷
+	// 모든 알고리즘은 한번에 안풀린다
 	// 실수가 굉장히 많았다!!!!!!!!!!!!!! 정말정말 많았다
 	// 이 실수를 위해 이게 맞나 한번더 되돌어 가야한다
 	// 시간의 압박감이 굉장하다 그럴수록 한번더 맞나 확인해보는 습관을 가져야겠다.
@@ -59,13 +59,13 @@ public class B17779 {// 게리맨더링 2
 			renderMap = new int[N + 1][N + 1];
 			render();
 			int res = calanother();
-//			for (int i = 1; i <= N; i++) {
-//				for (int j = 1; j <= N; j++) {
-//					System.out.print(renderMap[i][j] + " ");
-//				}
-//				System.out.println();
-//			}
-//			System.out.println();
+			// for (int i = 1; i <= N; i++) {
+			// for (int j = 1; j <= N; j++) {
+			// System.out.print(renderMap[i][j] + " ");
+			// }
+			// System.out.println();
+			// }
+			// System.out.println();
 			result = res < result ? res : result;
 			return;
 		}

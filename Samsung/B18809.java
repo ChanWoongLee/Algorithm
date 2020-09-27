@@ -44,10 +44,6 @@ public class B18809 {
 
 	static void dfs(int index, int cnt) {
 		if (cnt == R + G) {
-			// 현재 temp에는 배양액을 뿌릴 자리가 결정되있음
-			// for (int i = 0; i < temp.length; i++)
-			// System.out.print(temp[i].r + "," + temp[i].c + " ");
-			// System.out.println();
 			dfs2(0, 0);
 			return;
 		}
@@ -60,9 +56,6 @@ public class B18809 {
 
 	static void dfs2(int index, int cnt) {
 		if (cnt == R) {
-			// for(int i = 0 ; i < temp2.length; i++)
-			// System.out.print(temp2[i]+" ");
-			// System.out.println();
 			solve();
 			return;
 		}
@@ -126,23 +119,23 @@ public class B18809 {
 		result = res > result ? res : result;
 	}
 }
-
-class water {
-	int r, c, color, cnt;
-
-	public water(int r, int c, int color, int cnt) {
-		this.r = r;
-		this.c = c;
-		this.color = color;
-		this.cnt = cnt;
-	}
-}
-
-class gardenloc {
-	int r, c;
-
-	public gardenloc(int r, int c) {
-		this.r = r;
-		this.c = c;
-	}
-}
+//
+//class water {
+//	int r, c, color, cnt;
+//
+//	public water(int r, int c, int color, int cnt) {
+//		this.r = r;
+//		this.c = c;
+//		this.color = color;
+//		this.cnt = cnt;
+//	}
+//}
+//
+//class gardenloc {
+//	int r, c;
+//
+//	public gardenloc(int r, int c) {
+//		this.r = r;
+//		this.c = c;
+//	}
+//}

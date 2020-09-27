@@ -64,7 +64,6 @@ public class B17143 {
 					} else {
 						if (2 * (C - 1) <= move1)
 							move1 = move1 % (2 * (C - 1));
-
 					}
 					for (int move = 0; move < move1; move++) {
 						if (r + dr[dir] >= 0 && r + dr[dir] < R && c + dc[dir] >= 0 && c + dc[dir] < C) {
