@@ -10,33 +10,37 @@ public class Programers_브라이언의_고민 {
 
 	static boolean INVALID = false;
 	static ArrayList<Character> special;
+	static ArrayList<String> res = new ArrayList<>();
 
 	static public String solution(String sentence) {
 		special = new ArrayList<>();
-		String answer = recur(sentence);
+		String answer = recur(sentence, 0, sentence.length() - 1);
 		if (INVALID)
 			return "invalid";
 		else
 			return answer;
 	}
 
-	static public String recur(String sent) {
+	static public String recur(String sent, int start, int end) {
 		int specialCnt = 0;
 		for (int i = 0; i < sent.length(); i++) {
 			if (sent.charAt(i) >= 'a' && sent.charAt(i) <= 'z') {
 				specialCnt++;
 			}
 		}
-
-		if (sent.charAt(0) >= 'a' && sent.charAt(0) <= 'z') { // 2번확인
-			if (special.contains(sent.charAt(0))) {
+		if (specialCnt == 0) {
+			res.add(sent.substring(start, end + 1));
+			return null;
+		}
+		if (sent.charAt(start) >= 'a' && sent.charAt(start) <= 'z') { // 2번확인
+			if (!special.contains(sent.charAt(start))) {
 				INVALID = true;
 				return null;
 			}
 			int cnt = 0;
 			int index = 0;
-			for (int i = 0; i < sent.length(); i++) {
-				if (sent.charAt(0) == sent.charAt(i)) {
+			for (int i = start; i <= end; i++) {
+				if (sent.charAt(start) == sent.charAt(i)) {
 					cnt++;
 					index = i;
 				}
@@ -45,9 +49,10 @@ public class Programers_브라이언의_고민 {
 				INVALID = true;
 				return null;
 			}
-			special.add(sent.charAt(0));
-			return recur(sent.substring(1, index)) + " " + recur(sent.substring(index + 1, sent.length()));
-		} else if (sent.charAt(1) >= 'a' && sent.charAt(1) <= 'z') {
+			special.add(sent.charAt(start));
+			recur(sent, start, index);
+			recur(sent, index + 1, sent.length() - 1);
+		} else if (sent.charAt(1) >= 'a' && sent.charAt(1) <= 'z') { // 1번확인
 			if (special.contains(sent.charAt(2))) {
 				INVALID = true;
 				return null;

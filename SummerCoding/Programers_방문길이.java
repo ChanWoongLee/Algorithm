@@ -1,6 +1,5 @@
 package SummerCoding;
 
-import java.util.ArrayList;
 
 public class Programers_방문길이 {
 
@@ -13,11 +12,11 @@ public class Programers_방문길이 {
 
 	public int solution(String dirs) {
 		int answer = 0;
-		int x = 0;
-		int y = 0;
+		int x = 5;
+		int y = 5;
 		int nextX = 0;
 		int nextY = 0;
-		ArrayList<ArrayList<Integer>> ar = new ArrayList<>();
+		boolean[][][][] visit = new boolean[11][11][11][11];
 		for (int i = 0; i < dirs.length(); i++) {
 			int beforeX = nextX;
 			int beforeY = nextY;
@@ -39,28 +38,17 @@ public class Programers_방문길이 {
 				nextY += dy[3];
 				break;
 			}
-			if (nextX < -5 || nextX > 5 || nextY > 5 || nextY < -5) {
+			if (nextX < 0 || nextX > 10 || nextY > 11 || nextY < 0) {
 				nextX = beforeX;
 				nextY = beforeY;
 				continue;
 			}
-			boolean dup = false;
-			ArrayList<Integer> check = new ArrayList<>();
-			check.add(nextX);
-			check.add(nextY);
-			for (ArrayList<Integer> a : ar) {
-				if (a.get(0) == check.get(0) && a.get(1) == check.get(1)) {
-					dup = true;
-					break;
-				}
-			}
-			if (dup)
-				continue;
-			else {
+			if (!visit[beforeX][beforeY][nextX][nextY] && !visit[nextX][nextY][beforeX][beforeY]) {
+				visit[beforeX][beforeY][nextX][nextY] = true;
+				visit[nextX][nextY][beforeX][beforeY] = true;
 				answer++;
-				ar.add(check);
 			}
-		}.
+		}
 		return answer;
 	}
 }
