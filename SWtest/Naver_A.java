@@ -1,4 +1,4 @@
-package SummerCoding;
+package SWtest;
 
 public class Naver_A {
 
@@ -19,7 +19,7 @@ public class Naver_A {
 				day = i;
 				break;
 			}
-			if (make < c[i]) {.
+			if (make < c[i]) {
 				cnt++;
 				left = make;
 				price /= 2;

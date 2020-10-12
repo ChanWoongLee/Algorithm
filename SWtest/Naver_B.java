@@ -1,4 +1,4 @@
-package SummerCoding;
+package SWtest;
 
 import java.util.*;
 

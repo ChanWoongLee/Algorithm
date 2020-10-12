@@ -1,4 +1,4 @@
-package SummerCoding;
+package SWtest;
 
 public class Kakao2021_A {
 
