@@ -13,6 +13,8 @@ public class Line2020_B {
 	}
 
 	static public int[] solution(int[] ball, int[] order) {
+		ArrayList<Integer> ar = new ArrayList<>();
+		Queue<Integer> q = new LinkedList<>();
 		Queue<Integer> answerQ = new LinkedList<>();
 		Deque<Integer> dq = new LinkedList<>();
 		ArrayList<Integer> boru = new ArrayList<>();
@@ -50,6 +52,7 @@ public class Line2020_B {
 		for (int a : answerQ) {
 			answer[i++] = a;
 		}
+		System.out.println();
 		return answer;
 	}
 }
