@@ -2,6 +2,7 @@ package SWtest;
 
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -52,7 +53,12 @@ public class Line2020_B {
 		for (int a : answerQ) {
 			answer[i++] = a;
 		}
+		Queue<Integer> qq = new LinkedList<>();
+		HashMap<Integer, Integer> aa = new HashMap<>();
+		LinkedList<Integer> bb = new LinkedList<>();
+		String a = "e";
 		System.out.println();
 		return answer;
 	}
+
 }

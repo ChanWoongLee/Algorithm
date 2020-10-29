@@ -1,4 +1,4 @@
-package SummerCoding;
+package SWtest;
 
 public class Kakao2020_A {
 	// 10 : 7 Ω√¿€

@@ -27,6 +27,7 @@ class SolutionA {
 		while (true) {
 			String check = "..";
 			String before = new_id;
+			
 			new_id = new_id.replace(check, ".");
 			if (before.equals(new_id))
 				break;
@@ -57,6 +58,7 @@ class SolutionA {
 			while (!(new_id.length() >= 3)) {
 				new_id += String.valueOf(last);
 			}
+			
 		}
 		////////////////
 		return new_id;
