@@ -22,31 +22,7 @@ public class B2240 {
 		dp[0][0] = 0;
 		dp[0][1] = 0;
 		int result = 0;
-		for (int i = 0; i < T; i++) {
-			st = new StringTokenizer(bf.readLine());
-			int now = Integer.parseInt(st.nextToken());
-			for (int j = T; j >= 1; j--) {
-				for (int k = W; k > 0; k--) {
-					if (now == 1) {
-						if (k % 2 == 0 && dp[j - 1][k] != -1) {
-							dp[j][k] = Math.max(dp[j][k], dp[j - 1][k] + 1);
-						} else if (k % 2 != 0 && dp[j - 1][k - 1] != -1) {
-							dp[j][k] = Math.max(dp[j][k], dp[j - 1][k - 1] + 1);
-						}
-					} else {
-						if (k % 2 == 0 && dp[j - 1][k - 1] != -1) {
-							dp[j][k] = Math.max(dp[j][k], dp[j - 1][k - 1] + 1);
-						} else if (k % 2 != 0 && dp[j - 1][k] != -1) {
-							dp[j][k] = Math.max(dp[j][k], dp[j - 1][k] + 1);
-						}
-					}
-					if (result > dp[j][k])
-						result = dp[j][k];
-					System.out.println(dp[j][k]);
-				}
-			}
-
-		}
+	
 		System.out.println(result);
 	}
 
