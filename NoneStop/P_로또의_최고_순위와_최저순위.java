@@ -14,9 +14,12 @@ public class P_로또의_최고_순위와_최저순위 {
 		boolean[] lvisit = new boolean[lottos.length];
 		boolean[] wvisit = new boolean[win_nums.length];
 		int correct = 0;
+		int zero = 0;
 		for (int i = 0; i < lottos.length; i++) {
-			if (lottos[i] == 0)
+			if (lottos[i] == 0) {
+				zero++;
 				continue;
+			}
 			for (int j = 0; j < lottos.length; j++) {
 				if (win_nums[j] == lottos[i]) {
 					correct++;
@@ -24,7 +27,8 @@ public class P_로또의_최고_순위와_최저순위 {
 				}
 			}
 		}
+		
 
-		return answer;
+		return new int[] {rank[correct+zero], rank[correct]};
 	}
 }
