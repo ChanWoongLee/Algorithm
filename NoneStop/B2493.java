@@ -36,7 +36,7 @@ public class B2493 {
 					System.out.print(index.peek() + " ");
 					index.add(i);
 				}
-			}Qu
+			}
 		}
 	}
 
