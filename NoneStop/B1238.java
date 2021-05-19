@@ -63,7 +63,7 @@ public class B1238 {
 
 			for (Node no : graph[now.end]) {
 				if (dist2[start][no.end] > dist2[start][now.end] + no.value) {
-					dist2[start][now.end] = dist2[start][no.end] + no.value;
+					dist2[start][no.end] = dist2[start][now.end] + no.value;
 					pq.add(new Node(no.end, now.value + no.value));
 				}
 			}
