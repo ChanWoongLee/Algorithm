@@ -31,13 +31,11 @@ public class B17612 {
 			if (pq.size() == k) {
 				now = pq.poll();
 				time = now.outTime;
-				ans += now.custNo * cnt;
-				cnt++;
+				ans += now.custNo * cnt++;
 				sequence.add(now.index);
 				while (!pq.isEmpty() && pq.peek().outTime == time) {
 					now = pq.poll();
-					ans += now.custNo * cnt;
-					cnt++;
+					ans += now.custNo * cnt++;
 					sequence.add(now.index);
 				}
 			}
